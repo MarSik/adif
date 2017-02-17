@@ -7,6 +7,19 @@
     <groupId>org.marsik.ham</groupId>
     <artifactId>adif</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>ADIF library</name>
+    <description>Library for reading and writing ADIF files</description>
+    <url>https://github.com/MarSik/adif</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <dependencies>
         <dependency>
