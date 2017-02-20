@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.time.ZonedDateTime;
 import java.util.List;
 
+import org.gavaghan.geodesy.GlobalCoordinates;
 import org.marsik.ham.adif.enums.AntPath;
 import org.marsik.ham.adif.enums.Band;
 import org.marsik.ham.adif.enums.Continent;
@@ -315,16 +316,9 @@ public class Adif3Record {
     private Double kIndex;
 
     /**
-     * the contacted station's latitude
-     * todo location type
+     * the contacted station's cooridinates
      */
-    private Double lat;
-
-    /**
-     * the contacted station's longitude
-     * todo location type
-     */
-    private Double lon;
+    private GlobalCoordinates coordinates;
 
     /**
      * date QSL received from ARRL Logbook of the World
@@ -434,14 +428,8 @@ public class Adif3Record {
 
     /**
      * the logging station's latitude
-     * todo coordinates
      */
-    private Double myLat;
-
-    /**
-     * the logging station's longitude
-     */
-    private Double myLon;
+    private GlobalCoordinates myCoordinates;
 
     /**
      * the logging operator's name
@@ -673,7 +661,7 @@ public class Adif3Record {
     /**
      * the contacted station's transmitter power in watts
      */
-    private Integer rxPwr;
+    private Double rxPwr;
 
     /**
      * satellite mode

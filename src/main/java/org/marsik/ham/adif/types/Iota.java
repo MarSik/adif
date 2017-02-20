@@ -16,4 +16,9 @@ public class Iota implements AdifEnumCode {
     public String adifCode() {
         return continent + "-" + String.format("%03d", island);
     }
+
+    public static Iota findByCode(String code) {
+        String[] pieces = code.split("-");
+        return new Iota(Continent.findByCode(pieces[0]), Integer.parseInt(pieces[1]));
+    }
 }

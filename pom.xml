@@ -23,6 +23,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.clojars.ndimiduk</groupId>
+            <artifactId>geodesy</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.14</version>

@@ -1,5 +1,9 @@
 package org.marsik.ham.adif.enums;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Stream;
+
 public enum Band implements AdifEnumCode {
     BAND_2190m("2190m", .136, .137),
     BAND_630m("630m", .472, .479),
@@ -52,5 +56,15 @@ public enum Band implements AdifEnumCode {
 
     public double getUpperFrequency() {
         return upperFrequency;
+    }
+
+    private final static Map<String, Band> reverse = new HashMap<>();
+
+    static {
+        Stream.of(values()).forEach(v -> reverse.put(v.adifCode(), v));
+    }
+
+    public static Band findByCode(String code) {
+        return reverse.get(code.toLowerCase());
     }
 }

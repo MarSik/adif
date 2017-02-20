@@ -1,5 +1,9 @@
 package org.marsik.ham.adif.enums;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Stream;
+
 public enum Submode implements AdifEnumCode {
     AMTORFEC("AMTORFEC", Mode.TOR),
     ASCI("ASCI", Mode.RTTY),
@@ -95,5 +99,15 @@ public enum Submode implements AdifEnumCode {
 
     public Mode getMode() {
         return mode;
+    }
+
+    private final static Map<String, Submode> reverse = new HashMap<>();
+
+    static {
+        Stream.of(values()).forEach(v -> reverse.put(v.adifCode(), v));
+    }
+
+    public static Submode findByCode(String code) {
+        return reverse.get(code.toUpperCase());
     }
 }

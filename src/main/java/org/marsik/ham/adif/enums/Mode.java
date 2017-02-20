@@ -47,4 +47,8 @@ public enum Mode implements AdifEnumCode {
     public String adifCode() {
         return name();
     }
+
+    public static Mode findByCode(String code) {
+        return Mode.valueOf(code.toUpperCase());
+    }
 }

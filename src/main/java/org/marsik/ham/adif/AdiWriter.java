@@ -9,10 +9,12 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 import org.marsik.ham.adif.enums.AdifEnumCode;
+import org.marsik.ham.grid.CoordinateWriter;
 
 public class AdiWriter {
-    private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-    private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HHmmss");
+    static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+    static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HHmmss");
+    static final DateTimeFormatter timeFormatterShort = DateTimeFormatter.ofPattern("HHmm");
 
     private StringBuilder builder = new StringBuilder();
 
@@ -215,8 +217,12 @@ public class AdiWriter {
         append("IOTA_ISLAND_ID", rec.getIotaIslandId());
         append("ITUZ", rec.getItuz());
         append("K_INDEX", rec.getKIndex());
-        append("LAT", rec.getLat());
-        append("LON", rec.getLon());
+
+        if (rec.getCoordinates() != null) {
+            append("LAT", CoordinateWriter.latToDM(rec.getCoordinates().getLatitude()));
+            append("LON", CoordinateWriter.lonToDM(rec.getCoordinates().getLongitude()));
+        }
+
         append("LOTW_QSLRDATE", rec.getLotwQslRDate());
         append("LOTW_QSLSDATE", rec.getLotwQslSDate());
         append("LOTW_QSL_RCVD", rec.getLotwQslRcvd());
@@ -234,8 +240,12 @@ public class AdiWriter {
         append("MY_IOTA", rec.getMyIota());
         append("MY_IOTA_ISLAND_ID", rec.getMyIotaIslandId());
         append("MY_ITU_ZONE", rec.getMyItuZone());
-        append("MY_LAT", rec.getMyLat());
-        append("MY_LON", rec.getMyLon());
+
+        if (rec.getMyCoordinates() != null) {
+            append("MY_LAT", CoordinateWriter.latToDM(rec.getMyCoordinates().getLatitude()));
+            append("MY_LON", CoordinateWriter.lonToDM(rec.getMyCoordinates().getLongitude()));
+        }
+
         append("MY_NAME", rec.getMyName());
         append("MY_POSTAL_CODE", rec.getMyPostalCode());
         append("MY_RIG", rec.getMyRig());
@@ -300,9 +310,13 @@ public class AdiWriter {
         appendEndOfRecord();
     }
 
-    public void append(Adif3Header header) {
+    public void append(AdifHeader header) {
         append("adif_ver", header.getVersion());
         append("programid", getClass().getCanonicalName());
         appendEndOfHeader();
+    }
+
+    public String toDegrees(Double deg) {
+        return null; // TODO
     }
 }
