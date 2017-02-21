@@ -34,13 +34,13 @@ public class AdiReaderTest {
         assertThat(fields)
                 .isNotNull()
                 .hasSize(3)
-                .containsKeys("test", "lala", "lili");
+                .containsKeys("TEST", "LALA", "LILI");
 
-        assertThat(fields.get("test"))
+        assertThat(fields.get("TEST"))
                 .isEqualTo("abc");
-        assertThat(fields.get("lala"))
+        assertThat(fields.get("LALA"))
                 .isEqualTo("");
-        assertThat(fields.get("lili"))
+        assertThat(fields.get("LILI"))
                 .isEqualTo("ab");
     }
 
@@ -54,7 +54,7 @@ public class AdiReaderTest {
         assertThat(fields)
                 .isNotNull()
                 .hasSize(3)
-                .containsKeys("test", "lala", "lili");
+                .containsKeys("TEST", "LALA", "LILI");
     }
 
     @Test

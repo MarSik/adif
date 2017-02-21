@@ -16,6 +16,7 @@ Generated on 2011-11-22 at 02:15:23Z for WN4AZY
 <sweatersize:1>M
 <shoesize:2>11
 <app_monolog_compression:3>off
+<tx_pwr:2>10
 <eor>
 
 <qso_date:8>20101022
@@ -26,4 +27,5 @@ Generated on 2011-11-22 at 02:15:23Z for WN4AZY
 <submode:5>PSK63
 <epc:5>32123
 <app_monolog_compression:3>off
+<tx_pwr:2>2W
 <eor>

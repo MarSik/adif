@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -37,6 +38,8 @@ import org.marsik.ham.grid.CoordinateWriter;
 import org.marsik.ham.util.MultiOptional;
 
 public class AdiReader {
+    private static final Pattern NUMERIC_RE = Pattern.compile("-?\\d+(\\.\\d+)?");
+
     public Optional<Adif3> read(BufferedReader reader) throws IOException {
         Adif3 document = new Adif3();
 
@@ -201,7 +204,11 @@ public class AdiReader {
         maybeGet(recordFields, "RIG").map(Function.identity()).ifPresent(record::setRig);
         maybeGet(recordFields, "RST_RCVD").map(Function.identity()).ifPresent(record::setRstRcvd);
         maybeGet(recordFields, "RST_SENT").map(Function.identity()).ifPresent(record::setRstSent);
-        maybeGet(recordFields, "RX_PWR").map(Double::parseDouble).ifPresent(record::setRxPwr);
+        maybeGet(recordFields, "RX_PWR")
+                .map(s -> s.replaceAll("[wW]$", ""))
+                .filter(AdiReader::isNumeric)
+                .map(Double::parseDouble)
+                .ifPresent(record::setRxPwr);
         maybeGet(recordFields, "SAT_MODE").map(Function.identity()).ifPresent(record::setSatMode);
         maybeGet(recordFields, "SAT_NAME").map(Function.identity()).ifPresent(record::setSatName);
         maybeGet(recordFields, "SFI").map(Double::parseDouble).ifPresent(record::setSfi);
@@ -220,7 +227,11 @@ public class AdiReader {
         maybeGet(recordFields, "TEN_TEN").map(Integer::parseInt).ifPresent(record::setTenTen);
         maybeGet(recordFields, "TIME_OFF").map(this::parseTime).ifPresent(record::setTimeOff);
         maybeGet(recordFields, "TIME_ON").map(this::parseTime).ifPresent(record::setTimeOn);
-        maybeGet(recordFields, "TX_PWR").map(Double::parseDouble).ifPresent(record::setTxPwr);
+        maybeGet(recordFields, "TX_PWR")
+                .map(s -> s.replaceAll("[wW]$", ""))
+                .filter(AdiReader::isNumeric)
+                .map(Double::parseDouble)
+                .ifPresent(record::setTxPwr);
         maybeGet(recordFields, "USACA_COUNTIES")
                 .map(s -> parseColonArray(s, String::valueOf))
                 .ifPresent(record::setUsaCaCounties);
@@ -245,7 +256,7 @@ public class AdiReader {
         }
 
         while (field != null && !"eor".equalsIgnoreCase(field.getName())) {
-            fields.put(field.getName(), field.getValue());
+            fields.put(field.getName().toUpperCase(), field.getValue());
             field = readField(reader);
         }
 
@@ -372,6 +383,11 @@ public class AdiReader {
         return Stream.of(s.split(","))
                 .map(fieldConverter)
                 .collect(Collectors.toList());
+    }
+
+    private static boolean isNumeric(String s)
+    {
+        return NUMERIC_RE.matcher(s).matches();
     }
 
     private <T> List<T> parseColonArray(String s, Function<String, T> fieldConverter) {
