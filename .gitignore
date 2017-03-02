@@ -4,3 +4,5 @@ target
 *.iml
 *.versionsBackup
 *.rpm
+settings-travis.xml
+
