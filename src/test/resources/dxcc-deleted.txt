@@ -1,0 +1,141 @@
+ARRL DXCC LIST
+DELETED ENTITIES
+
+September 2016 Edition
+Deleted Entities Total:  62
+
+Credit for any of these entities can be given if the date of contact in question agrees with the date(s) shown in the corresponding footnote.
+
+Effective April 2, 2012, DXCC Card Checkers can check all current and deleted entities on the DXCC List.  Also, only approved DXCC Card Checkers
+can check 160 Meters.  For the list of approved 160 Meter card checkers visit:  http://www.arrl.org/160-meter-card-checkers
+
+
+                                                                   ZONE     Entity
+    Prefix              Entity                         Continent ITU   CQ    Code
+    ___________________ ________________________________________ _____ _____ ___
+    (2)                 Blenheim Reef                      AF    41    39    023
+    (3)                 Geyser Reef                        AF    53    39    093
+    (4)                 Abu Ail Is.                        AS    39    21    002
+    1M(1),(5)           Minerva Reef                       OC    62    32    178
+    4W(6)               Yemen Arab Republic                AS    39    21    154
+    7J1(7)              Okino Tori-shima                   AS    45    27    194
+    8Z4(8)              Saudi Arabia/Iraq Neutral Zone     AS    39    21    226
+    8Z5,9K3(9)          Kuwait/Saudi Arabia Neutral Zone   AS    39    21    068
+    9S4(10)             Saar                               EU    28    14    210
+    9U5(11)             Ruanda-Urundi                      AF    52    36    208
+    AC3(1),(12)         Sikkim                             AS    41    22    231
+    AC4(1),(13)         Tibet                              AS    41    23    268
+    C9(14)              Manchuria                          AS    33    24    164
+    CN2(15)             Tangier                            AF    37    33    264
+    CR8(16)             Damao, Diu                         AS    41    22    042
+    CR8(16)             Goa                                AS    41    22    101
+    CR8,CR10(17)        Portuguese Timor                   OC    54    28    200
+    DA-DM(18)           Germany                            EU    28    14    081
+    DM,Y2-9(19)         German Democratic Republic         EU    28    14    229
+    EA9(20)             Ifni                               AF    37    33    113
+    FF(21)              French West Africa                 AF    46    35    059
+    FH,FB8(22)          Comoros                            AF    53    39    039
+    FI8(23)             French Indo-China                  AS    49    26    058
+    FN8(24)             French India                       AS    41    22    067
+    FQ8(25)             French Equatorial Africa           AF    47,52 36    057
+    HK0(26)             Bajo Nuevo                         NA    11    08    019
+    HK0,KP3,KS4(26)     Serrana Bank & Roncador Cay        NA    11    07    228
+    I1(27)              Trieste                            EU    28    15    271
+    I5(28)              Italian Somaliland                 AF    48    37    115
+    JZ0(29)             Netherlands New Guinea             OC    51    28    184
+    KH5K(30)            Kingman Reef                       OC    61    31    134    
+    KR6,8,JR6,KA6(31)   Okinawa (Ryukyu Is.)               AS    45    25    193
+    KS4(32)             Swan Is.                           NA    11    07    261
+    KZ5(33)             Canal Zone                         NA    11    07    028
+    OK-OM(34)           Czechoslovakia                     EU    28    15    218
+    P2,VK9(35)          Papua Territory                    OC    51    28    198
+    P2,VK9(35)          Territory of New Guinea            OC    51    28    267
+    PJ(36)              Bonaire, Curacao                   SA    11    09    085
+    PJ(36)              St. Maarten, Saba, St. Eustatius   NA    11    08    255
+    PK1-3(37)           Java                               OC    54    28    119
+    PK4(37)             Sumatra                            OC    54    28    258
+    PK5(37)             Netherlands Borneo                 OC    54    28    183
+    PK6(37)             Celebe & Molucca Is.               OC    54    28    030
+    R1/M(52)            Malyj Vysotskij I.                 EU    29    16    151
+    ST0(38)             Southern Sudan                     AF    47,48 34    244
+    UN1(39)             Karelo-Finnish Republic            EU    19    16    128
+    VO(40)              Newfoundland, Labrador             NA    09    02,05 186
+    VQ1,5H1(41)         Zanzibar                           AF    53    37    307
+    VQ6(42)             British Somaliland                 AF    48    37    026
+    VQ9(43)             Aldabra                            AF    53    39    008
+    VQ9(43)             Desroches                          AF    53    39    044
+    VQ9(43)             Farquhar                           AF    53    39    055
+    VS2,9M2(44)         Malaya                             AS    54    28    155
+    VS4(44)             Sarawak                            OC    54    28    220
+    VS9A,P,S(45)        People's Democratic Rep. of Yemen  AS    39    21    243
+    VS9H(46)            Kuria Muria I.                     AS    39    21    139
+    VS9K(47)            Kamaran Is.                        AS    39    21    127
+    ZC5(44)             British North Borneo               OC    54    28    025
+    ZC6,4X1(48)         Palestine                          AS    39    20    196
+    ZD4(49)             Gold Coast, Togoland               AF    46    35    102
+    ZS0,1(50)           Penguin Is.                        AF    57    38    493
+    ZS9(51)             Walvis Bay                         AF    57    38    488
+
+    NOTES:
+    1    Unofficial prefix.
+    2    (Blenheim Reef) Only contacts made May 4, 1967, to June 30, 1975, count for this entity.  Contacts made July 1, 1975, and after,
+	 count as Chagos Is. (VQ9).
+    3    (Geyser Reef) Only contacts made May 4, 1967, to February 28, 1978, count for this entity.
+    4    (Abu Ail Is.) Only contacts made  March 30, 1991, and before, count for this entity.
+    5    (1M) Only contacts made July 15, 1972, and before, count for this entity.  Contacts made July 16, 1972, and after, count as Tonga (A3).
+    6    (4W) Only contacts made May 21, 1990, and before, count for this entity.
+    7    (7J1) Only contacts made May 30, 1976, to November 30, 1980, count for this entity.  Contacts made December 1, 1980, and after,
+	 count as Ogasawara (JD1).
+    8    (8Z4) Only contacts made December 25, 1981, and before, count for this entity.
+    9    (8Z5,9K3) Only contacts made December 14, 1969, and before, count for this entity.
+    10   (9S4) Only contacts made March 31, 1957, and before, count for this entity.
+    11   (9U5) Only contacts made July 1, 1960, to June 30, 1962, count for this entity.  Contacts made July 1, 1962, and after, count as
+	 Burundi (9U) or Rwanda (9X).
+    12   (AC3) Only contacts made April 30, 1975, and before, count for this entity.  Contacts made May 1, 1975, and after, count as India (VU).
+    13   (AC4) Only contacts made May 30, 1974, and before, count for this entity.  Contacts made May 31, 1974, and after, count as China (B).
+    14   (C9) Only contacts made September 15, 1963, and before, count for this entity.  Contacts made September 16, 1963, and after, count as China (B).
+    15   (CN2) Only contacts made June 30, 1960, and before, count for this entity.  Contacts made July 1, 1960, and after, count as Morocco (CN).
+    16   (CR8 (Damao, Diu); CR8 (Goa)) Only contacts made December 31, 1961, and before, count for this entity.
+    17   (CR8,CR10) Only contacts made September 14, 1976, and before, count for this entity.
+    18   (DA-DM) Only contacts made September 16, 1973, and before, count for this entity.  Contacts made September 17, 1973, and after, count as
+	 Federal Republic of Germany (DA-DL) or German Democratic Republic (Y2-Y9).
+    19   (DM,Y2-9) Only contacts made September 17, 1973, to October 2, 1990, count for this entity.  On October 3, 1990, German Democratic Republic
+	 became part of Federal Republic of Germany.
+    20   (EA9) Only contacts made May 13, 1969, and before, count for this entity.
+    21   (FF) Only contacts made August 6, 1960, and before, count for this entity.
+    22   (FH,FB8) Only contacts made July 5, 1975, and before, count for this entity.  Contacts made July 6, 1975, and after, count as Comoros (D6)
+	 or Mayotte (FH,TO).
+    23   (FI8) Only contacts made December 20, 1950, and before, count for this entity.
+    24   (FN8) Only contacts made October 31, 1954, and before, count for this entity.
+    25   (FQ8) Only contacts made August 16, 1960, and before, count for this entity.
+    26   (HK0; HK0,KP3,KS4) Only contacts made September 16, 1981, and before, count for this entity.  Contacts made September 17, 1981, and after,
+	 count as San Andres (HK0).
+    27   (I1) Only contacts made March 31, 1957, and before, count for this entity.
+    28   (I5) Only contacts made June 30, 1960, and before, count for this entity.
+    29   (JZ0) Only contacts made April 30, 1963, and before, count for this entity.
+    30	 (KH5K) Only contacts made March 29, 2016, and before, count for this entity.  
+    31   (KR6,8,JR6,KA6) Only contacts made May 14, 1972, and before, count for this entity.  Contacts made May 15, 1972, and after, count as Japan (JA-JS,7J-7N).
+    32   (KS4) Only contacts made August 31, 1972, and before, count for this entity.  Contacts made September 1, 1972, and after, count as Honduras (HQ,HR).
+    33   (KZ5) Only contacts made September 30, 1979, and before, count for this entity.
+    34   (OK-OM) Only contacts made December 31, 1992, and before, count for this entity.
+    35   (P2,VK9 (Papua Territory); P2,VK9 (Territory of New Guinea)) Only contacts made September 15, 1975, and before, count for this entity.
+	  Contacts made September 16, 1975, and after, count as Papua New Guinea (P2).
+    36   (PJ (Bonaire, Curacao); PJ (St. Maarten, Saba, St. Eustatius)) Only contacts made October 9, 2010, and before, count for this entity.
+    37   (PK1-3; PK4; PK5; PK6) Only contacts made April 30, 1963, and before, count for this entity.  Contacts made May 1, 1963, and after, count as Indonesia (YB-YH).
+    38   (ST0) Only contacts made May 7, 1972, to December 31, 1994, count for this entity.
+    39   (UN1) Only contacts made June 30, 1960, and before, count for this entity.  Contacts made July 1, 1960, and after, count as European Russia (UA-UI1-7,RA-RZ).
+    40   (VO) Only contacts made March 31, 1949, and before, count for this entity.  Contacts made April 1, 1949, and after, count as Canada (VA-VG,VO,VY).
+    41   (VQ1,5H1) Only contacts made May 31, 1974, and before, count for this entity.  Contacts made June 1, 1974, and after, count as Tanzania (5H,5I).
+    42   (VQ6) Only contacts made June 30, 1960, and before, count for this entity.
+    43   (VQ9 (Aldabra); VQ9 (Desroches); VQ9 (Farquhar)) Only contacts made June 28, 1976, and before, count for this entity.  Contacts made June 29, 1976,
+	 and after, count as Seychelles (S7).
+    44   (VS2,9M2; VS4; ZC5) Only contacts made September 15, 1963, and before, count for this entity.  Contacts made September 16, 1963, and after,
+	 count as West Malaysia (9M2,4) or East Malaysia (9M6,8).
+    45   (VS9A,P,S) Only contacts made May 21, 1990, and before, count for this entity.
+    46   (VS9H) Only contacts made November 29, 1967, and before, count for this entity.
+    47   (VS9K) Only contacts made March 10, 1982, and before, count for this entity.
+    48   (ZC6,4X1) Only contacts made June 30, 1968, and before, count for this entity.  Contacts made July 1, 1968, and after, count as Israel (4X,4Z).
+    49   (ZD4) Only contacts made March 5, 1957, and before, count for this entity.
+    50   (ZS0,1) Only contacts made February 29, 1994, and before, count for this entity.
+    51   (ZS9) Only contacts made September 1, 1977, to February 28, 1994, count for this entity.
+    52   (R1/M) Only contacts made February 16, 2012, and before, count for this entity.

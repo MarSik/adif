@@ -203,9 +203,8 @@ public class Adif3Record {
 
     /**
      * the contacted station's Country Code
-     * todo enum Country Code
      */
-    private String dxcc;
+    private Integer dxcc;
 
     /**
      * the contacted station's email address
@@ -393,9 +392,8 @@ public class Adif3Record {
 
     /**
      * the logging station's Country Code
-     * todo country code
      */
-    private String myDxcc;
+    private Integer myDxcc;
 
     /**
      * the logging station's FISTS CW Club member information, which starts with a sequence of Digits giving

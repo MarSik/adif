@@ -108,7 +108,7 @@ public class AdiReader {
                 .map(s -> parseCommaArray(s, String::valueOf))
                 .ifPresent(record::setCreditGranted);
         maybeGet(recordFields, "DISTANCE").map(Double::parseDouble).ifPresent(record::setDistance);
-        maybeGet(recordFields, "DXCC").map(Function.identity()).ifPresent(record::setDxcc);
+        maybeGet(recordFields, "DXCC").map(Integer::parseInt).ifPresent(record::setDxcc);
         maybeGet(recordFields, "EMAIL").map(Function.identity()).ifPresent(record::setEmail);
         maybeGet(recordFields, "EQ_CALL").map(Function.identity()).ifPresent(record::setEqCall);
         maybeGet(recordFields, "EQSL_QSLRDATE").map(this::parseDate).ifPresent(record::setEqslQslRDate);
@@ -147,7 +147,7 @@ public class AdiReader {
         maybeGet(recordFields, "MY_CNTY").map(Function.identity()).ifPresent(record::setMyCnty);
         maybeGet(recordFields, "MY_COUNTRY").map(Function.identity()).ifPresent(record::setMyCountry);
         maybeGet(recordFields, "MY_CQ_ZONE").map(Integer::parseInt).ifPresent(record::setMyCqZone);
-        maybeGet(recordFields, "MY_DXCC").map(Function.identity()).ifPresent(record::setMyDxcc);
+        maybeGet(recordFields, "MY_DXCC").map(Integer::parseInt).ifPresent(record::setMyDxcc);
         maybeGet(recordFields, "MY_FISTS").map(Function.identity()).ifPresent(record::setMyFists);
         maybeGet(recordFields, "MY_GRIDSQUARE").map(Function.identity()).ifPresent(record::setMyGridSquare);
         maybeGet(recordFields, "MY_IOTA").map(Iota::findByCode).ifPresent(record::setMyIota);

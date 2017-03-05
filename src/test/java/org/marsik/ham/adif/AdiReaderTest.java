@@ -5,9 +5,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.StringReader;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Map;
+import java.util.Optional;
 
 import org.junit.Test;
 
@@ -82,6 +85,13 @@ public class AdiReaderTest {
         AdiReader reader = new AdiReader();
         BufferedReader inputReader = resourceInput("adif/sample.adi");
         reader.read(inputReader);
+    }
+
+    @Test
+    public void readMyLog() throws Exception {
+        AdiReader reader = new AdiReader();
+        BufferedReader input = Files.newBufferedReader(FileSystems.getDefault().getPath("/home/msivak/ownCloud/OK7MS.adif"));
+        Optional<Adif3> adif3 = reader.read(input);
     }
 
     private BufferedReader mockInput(String input) {
