@@ -87,13 +87,6 @@ public class AdiReaderTest {
         reader.read(inputReader);
     }
 
-    @Test
-    public void readMyLog() throws Exception {
-        AdiReader reader = new AdiReader();
-        BufferedReader input = Files.newBufferedReader(FileSystems.getDefault().getPath("/home/msivak/ownCloud/OK7MS.adif"));
-        Optional<Adif3> adif3 = reader.read(input);
-    }
-
     private BufferedReader mockInput(String input) {
         return new BufferedReader(new StringReader(input));
     }
