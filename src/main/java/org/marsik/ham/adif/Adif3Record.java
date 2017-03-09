@@ -52,12 +52,12 @@ public class Adif3Record {
     /**
      * the logging station's antenna azimuth, in degrees
      */
-    private Integer antAz;
+    private Double antAz;
 
     /**
      * the logging station's antenna elevation, in degrees
      */
-    private Integer antEl;
+    private Double antEl;
 
     /**
      * the signal path
@@ -688,6 +688,11 @@ public class Adif3Record {
     private String sigInfo;
     private String sigInfoIntl;
 
+    /*
+     * True indicates that the contacted station's operator is now a Silent Key.
+     */
+    private Boolean silentKey;
+
     /**
      * the contacted station's Straight Key Century Club (SKCC) member information
      */
@@ -768,6 +773,11 @@ public class Adif3Record {
      * the logging station's power in watts
      */
     private Double txPwr;
+
+    /*
+     * the contacted station's UKSMG member number
+     */
+    private Integer uksmg;
 
     /**
      * two US counties in the case where the contacted station is located on a border between two counties,

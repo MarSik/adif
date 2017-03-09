@@ -290,6 +290,7 @@ public class AdiWriter {
         append("SFI", rec.getSfi());
         append("SIG", rec.getSig());
         append("SIG_INFO", rec.getSigInfo());
+        append("SILENT_KEY", rec.getSilentKey());
         append("SKCC", rec.getSkcc());
         append("SOTA_REF", rec.getSotaRef());
         append("SRX", rec.getSrx());
@@ -304,6 +305,7 @@ public class AdiWriter {
         append("TIME_OFF", rec.getTimeOff());
         append("TIME_ON", rec.getTimeOn());
         append("TX_PWR", rec.getTxPwr());
+        append("UKSMG", rec.getUksmg());
         appendStrings("USACA_COUNTIES", rec.getUsaCaCounties());
         appendStrings("VUCC_GRIDS", rec.getVuccGrids());
         append("WEB", rec.getWeb());
@@ -314,9 +316,5 @@ public class AdiWriter {
         append("adif_ver", header.getVersion());
         append("programid", getClass().getCanonicalName());
         appendEndOfHeader();
-    }
-
-    public String toDegrees(Double deg) {
-        return null; // TODO
     }
 }

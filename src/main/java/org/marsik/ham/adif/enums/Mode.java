@@ -2,6 +2,7 @@ package org.marsik.ham.adif.enums;
 
 public enum Mode implements AdifEnumCode {
     AM,
+    ARDOP,
     ATV,
     CHIP,
     CLO,
@@ -21,6 +22,7 @@ public enum Mode implements AdifEnumCode {
     JT44,
     JT65,
     MFSK,
+    MSK144,
     MT63,
     OLIVIA,
     OPERA,
@@ -30,6 +32,7 @@ public enum Mode implements AdifEnumCode {
     PSK,
     PSK2K,
     Q15,
+    QRA64,
     ROS,
     RTTY,
     RTTYM,

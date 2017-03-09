@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public enum Propagation implements AdifEnumCode {
+    AIRCRAFT_SCATTER("AS"),
     AURORA("AUR"),
     AURORA_E("AUE"),
     BACK_SCATTER("BS"),

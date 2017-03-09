@@ -73,8 +73,8 @@ public class AdiReader {
         maybeGet(recordFields, "ADDRESS").map(Function.identity()).ifPresent(record::setAddress);
         maybeGet(recordFields, "AGE").map(Integer::parseInt).ifPresent(record::setAge);
         maybeGet(recordFields, "A_INDEX").map(Double::parseDouble).ifPresent(record::setAIndex);
-        maybeGet(recordFields, "ANT_AZ").map(Integer::parseInt).ifPresent(record::setAntAz);
-        maybeGet(recordFields, "ANT_EL").map(Integer::parseInt).ifPresent(record::setAntEl);
+        maybeGet(recordFields, "ANT_AZ").map(Double::parseDouble).ifPresent(record::setAntAz);
+        maybeGet(recordFields, "ANT_EL").map(Double::parseDouble).ifPresent(record::setAntEl);
         maybeGet(recordFields, "ANT_PATH").map(AntPath::findByCode).ifPresent(record::setAntPath);
         maybeGet(recordFields, "ARRL_SECT").map(Function.identity()).ifPresent(record::setArrlSect);
         maybeGet(recordFields, "AWARD_SUBMITTED")
@@ -214,6 +214,7 @@ public class AdiReader {
         maybeGet(recordFields, "SFI").map(Double::parseDouble).ifPresent(record::setSfi);
         maybeGet(recordFields, "SIG").map(Function.identity()).ifPresent(record::setSig);
         maybeGet(recordFields, "SIG_INFO").map(Function.identity()).ifPresent(record::setSigInfo);
+        maybeGet(recordFields, "SILENT_KEY").map(this::parseBool).ifPresent(record::setSilentKey);
         maybeGet(recordFields, "SKCC").map(Function.identity()).ifPresent(record::setSkcc);
         maybeGet(recordFields, "SOTA_REF").map(Sota::valueOf).ifPresent(record::setSotaRef);
         maybeGet(recordFields, "SRX").map(Integer::parseInt).ifPresent(record::setSrx);
@@ -232,6 +233,7 @@ public class AdiReader {
                 .filter(AdiReader::isNumeric)
                 .map(Double::parseDouble)
                 .ifPresent(record::setTxPwr);
+        maybeGet(recordFields, "UKSMG").map(Integer::parseInt).ifPresent(record::setUksmg);
         maybeGet(recordFields, "USACA_COUNTIES")
                 .map(s -> parseColonArray(s, String::valueOf))
                 .ifPresent(record::setUsaCaCounties);

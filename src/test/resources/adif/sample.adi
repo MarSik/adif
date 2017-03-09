@@ -24,6 +24,7 @@ Generated on 2011-11-22 at 02:15:23Z for WN4AZY
 <call:5>ON4UN
 <band:3>40M
 <mode:3>PSK
+<silent_key:1>Y
 <submode:5>PSK63
 <epc:5>32123
 <app_monolog_compression:3>off
