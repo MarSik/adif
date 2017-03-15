@@ -31,7 +31,7 @@ BufferedReader buffInput = ...; // get buffered reader from stream or file
 Optional<Adif3> adif = reader.read(buffInput);
 ```
 
-### Writing ADIF files
+## Writing ADIF files
 
 ```
 import org.marsik.ham.adif.Adif3Record
