@@ -20,6 +20,25 @@ This library is released on [Maven Central](http://search.maven.org/#search%7Cga
 </dependency>
 ```
 
+The other option is to use [Jitpack.io](https://jitpack.io/) by configuring a repository and dependency in the following way:
+
+```
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+```
+<dependency>
+    <groupId>com.github.MarSik</groupId>
+    <artifactId>adif</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+
 ## Reading ADIF files
 
 ```
