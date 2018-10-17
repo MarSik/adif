@@ -4,7 +4,7 @@
 
 This library is meant to be used for reading and writing of ADIF data (ADI format only for now, although the XML based ADIX is almost the same).
 
-The current format I am targeting is ADIF 3.0.5 as described at the [ADIF site](http://www.adif.org/).
+The current format I am targeting is ADIF 3.0.8 as described at the [ADIF site](http://www.adif.org/).
 
 This code is released under the Apache License 2.0
 
@@ -16,7 +16,7 @@ This library is released on [Maven Central](http://search.maven.org/#search%7Cga
 <dependency>
     <groupId>org.marsik.ham</groupId>
     <artifactId>adif</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 </dependency>
 ```
 
@@ -35,7 +35,7 @@ The other option is to use [Jitpack.io](https://jitpack.io/) by configuring a re
 <dependency>
     <groupId>com.github.MarSik</groupId>
     <artifactId>adif</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 </dependency>
 ```
 
