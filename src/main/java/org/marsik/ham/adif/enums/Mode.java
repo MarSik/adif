@@ -4,6 +4,7 @@ public enum Mode implements AdifEnumCode {
     AM,
     ARDOP,
     ATV,
+    C4FM,
     CHIP,
     CLO,
     CONTESTI,
@@ -14,6 +15,7 @@ public enum Mode implements AdifEnumCode {
     FAX,
     FM,
     FSK441,
+    FT8,
     HELL,
     ISCAT,
     JT4,
@@ -38,6 +40,7 @@ public enum Mode implements AdifEnumCode {
     RTTYM,
     SSB,
     SSTV,
+    T10,
     THOR,
     THRB,
     TOR,
@@ -52,6 +55,6 @@ public enum Mode implements AdifEnumCode {
     }
 
     public static Mode findByCode(String code) {
-        return Mode.valueOf(code.toUpperCase());
+        return Mode.valueOf(code.toUpperCase().replace(' ', '_'));
     }
 }

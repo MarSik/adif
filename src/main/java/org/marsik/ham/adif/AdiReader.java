@@ -107,6 +107,7 @@ public class AdiReader {
         maybeGet(recordFields, "CREDIT_GRANTED")
                 .map(s -> parseCommaArray(s, String::valueOf))
                 .ifPresent(record::setCreditGranted);
+        maybeGet(recordFields, "DARC_DOK").map(Function.identity()).ifPresent(record::setDarcDok);
         maybeGet(recordFields, "DISTANCE").map(Double::parseDouble).ifPresent(record::setDistance);
         maybeGet(recordFields, "DXCC").map(Integer::parseInt).ifPresent(record::setDxcc);
         maybeGet(recordFields, "EMAIL").map(Function.identity()).ifPresent(record::setEmail);
@@ -143,6 +144,7 @@ public class AdiReader {
         maybeGet(recordFields, "MAX_BURSTS").map(Integer::parseInt).ifPresent(record::setMaxBursts);
         maybeGet(recordFields, "MODE").map(Mode::findByCode).ifPresent(record::setMode);
         maybeGet(recordFields, "MS_SHOWER").map(Function.identity()).ifPresent(record::setMsShower);
+        maybeGet(recordFields, "MY_ANTENNA").map(Function.identity()).ifPresent(record::setMyAntenna);
         maybeGet(recordFields, "MY_CITY").map(Function.identity()).ifPresent(record::setMyCity);
         maybeGet(recordFields, "MY_CNTY").map(Function.identity()).ifPresent(record::setMyCnty);
         maybeGet(recordFields, "MY_COUNTRY").map(Function.identity()).ifPresent(record::setMyCountry);
@@ -201,6 +203,7 @@ public class AdiReader {
         maybeGet(recordFields, "QSO_DATE_OFF").map(s -> LocalDate.parse(s, AdiWriter.dateFormatter)).ifPresent(record::setQsoDateOff);
         maybeGet(recordFields, "QSO_RANDOM").map(this::parseBool).ifPresent(record::setQsoRandom);
         maybeGet(recordFields, "QTH").map(Function.identity()).ifPresent(record::setQth);
+        maybeGet(recordFields, "REGION").map(Function.identity()).ifPresent(record::setRegion);
         maybeGet(recordFields, "RIG").map(Function.identity()).ifPresent(record::setRig);
         maybeGet(recordFields, "RST_RCVD").map(Function.identity()).ifPresent(record::setRstRcvd);
         maybeGet(recordFields, "RST_SENT").map(Function.identity()).ifPresent(record::setRstSent);
