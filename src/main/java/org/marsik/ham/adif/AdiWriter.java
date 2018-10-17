@@ -197,6 +197,7 @@ public class AdiWriter {
         append("CQZ", rec.getCqz());
         appendStrings("CREDIT_SUBMITTED", rec.getCreditSubmitted());
         appendStrings("CREDIT_GRANTED", rec.getCreditGranted());
+        append("DARC_DOK", rec.getDarcDok());
         append("DISTANCE", rec.getDistance());
         append("DXCC", rec.getDxcc());
         append("EMAIL", rec.getEmail());
@@ -230,6 +231,7 @@ public class AdiWriter {
         append("MAX_BURSTS", rec.getMaxBursts());
         append("MODE", rec.getMode());
         append("MS_SHOWER", rec.getMsShower());
+        append("MY_ANTENNA", rec.getMyAntenna());
         append("MY_CITY", rec.getMyCity());
         append("MY_CNTY", rec.getMyCnty());
         append("MY_COUNTRY", rec.getMyCountry());
@@ -281,6 +283,7 @@ public class AdiWriter {
         append("QSO_DATE_OFF", rec.getQsoDateOff());
         append("QSO_RANDOM", rec.getQsoRandom());
         append("QTH", rec.getQth());
+        append("REGION", rec.getRegion());
         append("RIG", rec.getRig());
         append("RST_RCVD", rec.getRstRcvd());
         append("RST_SENT", rec.getRstSent());

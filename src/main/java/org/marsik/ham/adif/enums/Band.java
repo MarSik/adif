@@ -5,14 +5,14 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public enum Band implements AdifEnumCode {
-    BAND_2190m("2190m", .136, .137),
+    BAND_2190m("2190m", .1357, .1378),
     BAND_630m("630m", .472, .479),
     BAND_560m("560m", .501, .504),
     BAND_160m("160m", 1.8, 2.0),
     BAND_80m("80m", 3.5, 4.0),
-    BAND_60m("60m", 5.102, 5.4065),
+    BAND_60m("60m", 5.06, 5.45),
     BAND_40m("40m", 7.0, 7.3),
-    BAND_30m("30m", 10.0, 10.15),
+    BAND_30m("30m", 10.1, 10.15),
     BAND_20m("20m", 14.0, 14.35),
     BAND_17m("17m", 18.068, 18.168),
     BAND_15m("15m", 21.0, 21.45),

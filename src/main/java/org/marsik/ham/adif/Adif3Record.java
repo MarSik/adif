@@ -197,6 +197,11 @@ public class Adif3Record {
     private List<String> creditGranted;
 
     /**
+     * the contacted station's DARC DOK (District Location Code)
+     */
+    private String darcDok;
+
+    /**
      * the distance between the logging station and the contacted station in kilometers via the specified signal path
      */
     private Double distance;
@@ -363,6 +368,12 @@ public class Adif3Record {
      * For Meteor Scatter QSOs, the name of the meteor shower in progress
      */
     private String msShower;
+
+    /**
+     * the logging station's antenna
+     */
+    private String myAntenna;
+    private String myAntennaIntl;
 
     /**
      * the logging station's city
@@ -639,6 +650,11 @@ public class Adif3Record {
      */
     private String qth;
     private String qthIntl;
+
+    /**
+     * the contacted station’s WAE or CQ entity contained within a DXCC entity.
+     */
+    private String region;
 
     /**
      * description of the contacted station's equipment
