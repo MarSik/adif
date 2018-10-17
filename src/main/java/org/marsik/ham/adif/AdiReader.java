@@ -22,16 +22,7 @@ import java.util.stream.Stream;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.gavaghan.geodesy.GlobalCoordinates;
-import org.marsik.ham.adif.enums.AntPath;
-import org.marsik.ham.adif.enums.Band;
-import org.marsik.ham.adif.enums.Continent;
-import org.marsik.ham.adif.enums.Mode;
-import org.marsik.ham.adif.enums.Propagation;
-import org.marsik.ham.adif.enums.QslRcvd;
-import org.marsik.ham.adif.enums.QslSent;
-import org.marsik.ham.adif.enums.QslVia;
-import org.marsik.ham.adif.enums.QsoComplete;
-import org.marsik.ham.adif.enums.QsoUploadStatus;
+import org.marsik.ham.adif.enums.*;
 import org.marsik.ham.adif.types.Iota;
 import org.marsik.ham.adif.types.Sota;
 import org.marsik.ham.grid.CoordinateWriter;
@@ -39,6 +30,16 @@ import org.marsik.ham.util.MultiOptional;
 
 public class AdiReader {
     private static final Pattern NUMERIC_RE = Pattern.compile("-?\\d+(\\.\\d+)?");
+
+    private boolean quirksMode = false;
+
+    public boolean isQuirksMode() {
+        return quirksMode;
+    }
+
+    public void setQuirksMode(boolean quirksMode) {
+        this.quirksMode = quirksMode;
+    }
 
     public Optional<Adif3> read(BufferedReader reader) throws IOException {
         Adif3 document = new Adif3();
@@ -142,7 +143,15 @@ public class AdiReader {
         maybeGet(recordFields, "LOTW_QSL_RCVD").map(QslRcvd::findByCode).ifPresent(record::setLotwQslRcvd);
         maybeGet(recordFields, "LOTW_QSL_SENT").map(QslSent::findByCode).ifPresent(record::setLotwQslSent);
         maybeGet(recordFields, "MAX_BURSTS").map(Integer::parseInt).ifPresent(record::setMaxBursts);
-        maybeGet(recordFields, "MODE").map(Mode::findByCode).ifPresent(record::setMode);
+        try {
+            maybeGet(recordFields, "MODE").map(Mode::findByCode).ifPresent(record::setMode);
+        } catch (IllegalArgumentException e) {
+            if (quirksMode) {
+                maybeGet(recordFields, "MODE").map(Submode::findByCode).ifPresent((sm) -> record.setMode(sm.getMode()));
+            } else {
+                throw e;
+            }
+        }
         maybeGet(recordFields, "MS_SHOWER").map(Function.identity()).ifPresent(record::setMsShower);
         maybeGet(recordFields, "MY_ANTENNA").map(Function.identity()).ifPresent(record::setMyAntenna);
         maybeGet(recordFields, "MY_CITY").map(Function.identity()).ifPresent(record::setMyCity);

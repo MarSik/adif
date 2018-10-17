@@ -87,6 +87,26 @@ public class AdiReaderTest {
         reader.read(inputReader);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testLotwNormalMode() throws Exception {
+        AdiReader reader = new AdiReader();
+        BufferedReader inputReader = mockInput("<MODE:5>PSK31");
+        reader.read(inputReader);
+    }
+
+    @Test
+    public void testLotwQuirksMode() throws Exception {
+        AdiReader reader = new AdiReader();
+        reader.setQuirksMode(true);
+        BufferedReader inputReader = mockInput("<MODE:5>PSK31");
+        Adif3 result = reader.read(inputReader).get();
+
+        assertThat(result.records)
+                .hasSize(1);
+        assertThat(result.records.get(0).getMode().adifCode())
+                .isEqualTo("PSK");
+    }
+
     private BufferedReader mockInput(String input) {
         return new BufferedReader(new StringReader(input));
     }

@@ -50,6 +50,10 @@ BufferedReader buffInput = ...; // get buffered reader from stream or file
 Optional<Adif3> adif = reader.read(buffInput);
 ```
 
+Note: For reading Logbook of the World adi files enable the quirks mode 
+with `reader.setQuirksMode(true);`.  The quirks mode accepts submodes (i.e PSK31)
+in the modes fields and translates them to the appropriate mode (i.e. PSK).
+
 ## Writing ADIF files
 
 ```
