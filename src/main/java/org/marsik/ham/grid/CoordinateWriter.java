@@ -4,8 +4,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CoordinateWriter {
-    private static final Pattern LAT_RE = Pattern.compile("([NS]) ?([0-9]{0,2}) +([0-9]{1,2}(\\.[0-9]+)?)", Pattern.CASE_INSENSITIVE);
-    private static final Pattern LON_RE = Pattern.compile("([EW]) ?([01]?[0-9]{0,2}) +([0-9]{1,2}(\\.[0-9]+)?)", Pattern.CASE_INSENSITIVE);
+    private static final Pattern LAT_RE = Pattern.compile("([NS]) ?([0-9]{0,3}) +([0-9]{1,2}(\.[0-9]+)?)", Pattern.CASE_INSENSITIVE);
+    private static final Pattern LON_RE = Pattern.compile("([EW]) ?([01]?[0-9]{0,2}) +([0-9]{1,2}(\.[0-9]+)?)", Pattern.CASE_INSENSITIVE);
 
     private static String getLatitudePrefix(Double lat) {
         return lat >= 0.0 ? "N" : "S";
