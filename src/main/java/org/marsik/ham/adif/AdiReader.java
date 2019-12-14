@@ -325,6 +325,9 @@ public class AdiReader {
             res = reader.read(content, read, len - read);
             if (res >= 0) {
                 read += res;
+            } else {
+                //end-of-file sanity check
+                read = len;
             }
         }
         return String.copyValueOf(content);

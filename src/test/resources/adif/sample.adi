@@ -24,6 +24,9 @@ Generated on 2011-11-22 at 02:15:23Z for WN4AZY
 <call:5>ON4UN
 <band:3>40M
 <mode:3>PSK
+<address:41>John Doe
+100 Main Street
+City, ST 12345
 <silent_key:1>Y
 <submode:5>PSK63
 <epc:5>32123
@@ -34,9 +37,9 @@ Generated on 2011-11-22 at 02:15:23Z for WN4AZY
 <qso_date:8>20181016
 <time_on:4>2312
 <call:5>K0TET
-<band:3>70cm
+<band:4>70cm
 <mode:3>JT9
 <submode:9>JT9H FAST
 <app_monolog_compression:3>off
-<tx_pwr:2>100
+<tx_pwr:3>100
 <eor>
