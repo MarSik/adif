@@ -21,7 +21,7 @@ public enum Submode implements AdifEnumCode {
     HFSK("HFSK", Mode.HELL),
     ISCAT_A("ISCAT-A", Mode.ISCAT),
     ISCAT_B("ISCAT-B", Mode.ISCAT),
-    JS8("JS8", MODE.MFSK),
+    JS8("JS8", Mode.MFSK),
     JT4A("JT4A", Mode.JT4),
     JT4B("JT4B", Mode.JT4),
     JT4C("JT4C", Mode.JT4),
