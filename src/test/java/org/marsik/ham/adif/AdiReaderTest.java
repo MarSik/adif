@@ -1,12 +1,15 @@
 package org.marsik.ham.adif;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.marsik.ham.adif.enums.Band.*;
+import static org.marsik.ham.adif.enums.Mode.*;
+import static org.marsik.ham.adif.enums.Submode.*;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.StringReader;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Map;
@@ -28,6 +31,19 @@ public class AdiReaderTest {
                 .isEqualTo("abc");
     }
 
+   @Test
+    public void testReadFieldLengthTooLarge() throws Exception {
+        AdiReader reader = new AdiReader();
+        BufferedReader inputReader = mockInput("   <test:6>abcde");
+        AdiReader.Field f = reader.readField(inputReader);
+
+        assertThat(f.getName())
+                .isEqualTo("test");
+
+        assertThat(f.getValue())
+                .isEqualTo("abcde\u0000");
+    }
+
     @Test
     public void testReadRecord() throws Exception {
         AdiReader reader = new AdiReader();
@@ -45,6 +61,23 @@ public class AdiReaderTest {
                 .isEqualTo("");
         assertThat(fields.get("LILI"))
                 .isEqualTo("ab");
+    }
+
+    @Test
+    public void testReadMultilineRecord() throws Exception {
+        AdiReader reader = new AdiReader();
+        BufferedReader inputReader = mockInput("   <test:7>abc\r\nde<lala:3>asd");
+        Map<String,String> fields = reader.readRecord(inputReader);
+
+        assertThat(fields)
+                .isNotNull()
+                .hasSize(2)
+                .containsKeys("TEST", "LALA");
+
+        assertThat(fields.get("TEST"))
+                .isEqualTo("abc\r\nde");
+        assertThat(fields.get("LALA"))
+                .isEqualTo("asd");
     }
 
     @Test
@@ -84,7 +117,37 @@ public class AdiReaderTest {
     public void testAdifSample() throws Exception {
         AdiReader reader = new AdiReader();
         BufferedReader inputReader = resourceInput("adif/sample.adi");
-        reader.read(inputReader);
+        Optional<Adif3> adif = reader.read(inputReader);
+        assertThat(adif.get().header.version).isEqualTo("3.0.4");
+        assertThat(adif.get().header.programId).isEqualTo("monolog");
+        assertThat(adif.get().records)
+                .isNotNull()
+                .hasSize(3);
+
+        assertThat(adif.get().records.get(0).getQsoDate()).isEqualTo(LocalDate.of(1990, 06, 20));
+        assertThat(adif.get().records.get(0).getTimeOn()).isEqualTo(LocalTime.of(15, 23));
+        assertThat(adif.get().records.get(0).getCall()).isEqualTo("VK9NS");
+        assertThat(adif.get().records.get(0).getBand()).isEqualTo(BAND_20m);
+        assertThat(adif.get().records.get(0).getMode()).isEqualTo(RTTY);
+        assertThat(adif.get().records.get(0).getTxPwr()).isEqualTo(10.0);
+
+        assertThat(adif.get().records.get(1).getQsoDate()).isEqualTo(LocalDate.of(2010, 10, 22));
+        assertThat(adif.get().records.get(1).getTimeOn()).isEqualTo(LocalTime.of(01, 11));
+        assertThat(adif.get().records.get(1).getCall()).isEqualTo("ON4UN");
+        assertThat(adif.get().records.get(1).getBand()).isEqualTo(BAND_40m);
+        assertThat(adif.get().records.get(1).getMode()).isEqualTo(PSK);
+        assertThat(adif.get().records.get(1).getAddress()).isEqualTo("John Doe\r\n100 Main Street\r\nCity, ST 12345");
+        assertThat(adif.get().records.get(1).getSilentKey()).isEqualTo(true);
+        assertThat(adif.get().records.get(1).getSubmode()).isEqualTo(PSK63.adifCode());
+        assertThat(adif.get().records.get(1).getTxPwr()).isEqualTo(2.0);
+
+        assertThat(adif.get().records.get(2).getQsoDate()).isEqualTo(LocalDate.of(2018, 10, 16));
+        assertThat(adif.get().records.get(2).getTimeOn()).isEqualTo(LocalTime.of(23, 12));
+        assertThat(adif.get().records.get(2).getCall()).isEqualTo("K0TET");
+        assertThat(adif.get().records.get(2).getBand()).isEqualTo(BAND_70cm);
+        assertThat(adif.get().records.get(2).getMode()).isEqualTo(JT9);
+        assertThat(adif.get().records.get(2).getSubmode()).isEqualTo(JT9H_FAST.adifCode());
+        assertThat(adif.get().records.get(2).getTxPwr()).isEqualTo(100.0);
     }
 
     @Test(expected = IllegalArgumentException.class)
