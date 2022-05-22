@@ -10,17 +10,7 @@ This code is released under the Apache License 2.0
 
 ## Adding this library to your project
 
-This library is released on [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22adif%22%20g%3A%22org.marsik.ham%22) so just add the dependency to your `pom.xml`:
-
-```
-<dependency>
-    <groupId>org.marsik.ham</groupId>
-    <artifactId>adif</artifactId>
-    <version>1.1</version>
-</dependency>
-```
-
-The other option is to use [Jitpack.io](https://jitpack.io/) by configuring a repository and dependency in the following way:
+Please use [Jitpack.io](https://jitpack.io/) by configuring a repository and dependency in the following way:
 
 ```
 <repositories>
@@ -35,7 +25,7 @@ The other option is to use [Jitpack.io](https://jitpack.io/) by configuring a re
 <dependency>
     <groupId>com.github.MarSik</groupId>
     <artifactId>adif</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
 </dependency>
 ```
 
