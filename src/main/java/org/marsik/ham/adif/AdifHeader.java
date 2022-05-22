@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AdifHeader {
-    String version = "3.0.5";
+    String version = "3.1.0";
     String programId;
     String programVersion;
     ZonedDateTime timestamp;

@@ -4,7 +4,7 @@
 
 This library is meant to be used for reading and writing of ADIF data (ADI format only for now, although the XML based ADIX is almost the same).
 
-The current format I am targeting is ADIF 3.0.8 as described at the [ADIF site](http://www.adif.org/).
+The current format I am targeting is ADIF 3.1.0 as described at the [ADIF site](http://www.adif.org/).
 
 This code is released under the Apache License 2.0
 
