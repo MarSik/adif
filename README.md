@@ -25,7 +25,7 @@ Please use [Jitpack.io](https://jitpack.io/) by configuring a repository and dep
 <dependency>
     <groupId>com.github.MarSik</groupId>
     <artifactId>adif</artifactId>
-    <version>1.2</version>
+    <version>1.2.1</version>
 </dependency>
 ```
 

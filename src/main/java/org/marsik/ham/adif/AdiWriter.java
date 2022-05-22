@@ -110,11 +110,11 @@ public class AdiWriter {
     }
 
     public void appendEndOfRecord() {
-        builder.append("<EOR>");
+        builder.append("<EOR>\n");
     }
 
     public void appendEndOfHeader() {
-        builder.append("<EOH>");
+        builder.append("<EOH>\n");
     }
 
     private void appendFieldHeader(String name, Integer length, String type) {
