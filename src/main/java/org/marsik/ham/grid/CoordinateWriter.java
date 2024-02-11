@@ -1,11 +1,11 @@
 package org.marsik.ham.grid;
 
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CoordinateWriter {
-    private static final Pattern LAT_RE = Pattern.compile("([NS]) ?([0-9]{0,2}) +([0-9]{1,2}(\\.[0-9]+)?)", Pattern.CASE_INSENSITIVE);
-    private static final Pattern LON_RE = Pattern.compile("([EW]) ?([01]?[0-9]{0,2}) +([0-9]{1,2}(\\.[0-9]+)?)", Pattern.CASE_INSENSITIVE);
+    private static final Pattern LAT_LON_RE = Pattern.compile("([NSWE])([01][0-9]{2}) ([0-9]{2}(\\.[0-9]{3}))", Pattern.CASE_INSENSITIVE);
 
     private static String getLatitudePrefix(Double lat) {
         return lat >= 0.0 ? "N" : "S";
@@ -21,7 +21,7 @@ public class CoordinateWriter {
         int deg = (int) lon;
         double min = 60.0 * (lon - (int)lon);
 
-        return String.format("%s%03d %02.3f", prefix, deg, min);
+        return latLonDmFormat(prefix, deg, min);
     }
 
     public static String latToDM(double lat) {
@@ -30,11 +30,11 @@ public class CoordinateWriter {
         int deg = (int) lat;
         double min = 60.0 * (lat - (int)lat);
 
-        return String.format("%s%02d %02.3f", prefix, deg, min);
+        return latLonDmFormat(prefix, deg, min);
     }
 
     public static double dmToLat(String string) {
-        Matcher matcher = LAT_RE.matcher(string);
+        Matcher matcher = LAT_LON_RE.matcher(string);
         if (matcher.matches()) {
             String prefix = matcher.group(1);
             int deg = Integer.parseInt(matcher.group(2));
@@ -46,7 +46,7 @@ public class CoordinateWriter {
     }
 
     public static double dmToLon(String string) {
-        Matcher matcher = LON_RE.matcher(string);
+        Matcher matcher = LAT_LON_RE.matcher(string);
         if (matcher.matches()) {
             String prefix = matcher.group(1);
             int deg = Integer.parseInt(matcher.group(2));
@@ -55,5 +55,9 @@ public class CoordinateWriter {
         } else {
             throw new IllegalArgumentException("Bad longitude format");
         }
+    }
+
+    private static String latLonDmFormat(String prefix, int deg, double min) {
+        return String.format(Locale.US, "%s%03d %02.3f", prefix, deg, min);
     }
 }
