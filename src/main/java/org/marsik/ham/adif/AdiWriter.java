@@ -6,6 +6,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 import org.marsik.ham.adif.enums.AdifEnumCode;
@@ -82,7 +83,7 @@ public class AdiWriter {
     }
 
     private String encode(Double value) {
-        return String.format("%f", value);
+        return String.format(Locale.US, "%f", value);
     }
 
     private String encode(AdifEnumCode value) {
